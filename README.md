@@ -1,63 +1,39 @@
-# CodeIgniter 4 Application Starter
+# Gestão de Clientes
+Sistema AUTH e CRUD feito com CodeIgniter 4
 
-## What is CodeIgniter?
+## Informações básicas
+- Tela de login e cadastro
+- Tabela com dados fictícios
+- Filtros e paginação
+- Endpoints REST
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](http://codeigniter.com).
+## Tecnologias usadas
+- PHP 7*
+- HTML, CSS, JAVASCRIPT e JQUERY
+- BOOTSTRAP, FONT AWESOME, DATA TABLES
+- MYSQL
+- CODEIGNITER 4.1.9
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+## Requisitos para instalar
+- Composer
+- PHP 7*
+- MYSQL 8
 
-More information about the plans for version 4 can be found in [the announcement](http://forum.codeigniter.com/thread-62615.html) on the forums.
+## Como instalar e usar
+- Faça o download, ou clone o repositório em sua máquina
+- Depois de ter o Composer, PHP e MYSQL instalados e configurados, basta acessar a pasta raiz do repositório dentro do shell e executar o seguinte comando:
+- php spark serve
+- Use a seguinte URL em seu navegador http://localhost:8080
 
-The user guide corresponding to this version of the framework can be found
-[here](https://codeigniter4.github.io/userguide/).
+## Observações
+- Você precisará criar o banco de dados e as tabelas dentro do seu SGBD, para que o sistema funcione corretamente
+- Dentro do arquivo  *App\Config\Database.php* defina as configurações do banco
+- Crie duas tabelas, uma que vai conter os dados do cliente, e outra que vai conter os dados do usuário que vem do login
+- A coluna "tipo" define se um usuário vai poder fazer os Updates e Deletes
 
-## Installation & updates
-
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
-
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
-
-## Setup
-
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
-
-## Important Change with index.php
-
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
-
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
-
-**Please** read the user guide for a better explanation of how CI4 works!
-
-## Repository Management
-
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
-
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
-
-## Server Requirements
-
-PHP version 7.3 or higher is required, with the following extensions installed:
-
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php)
-- xml (enabled by default - don't turn it off)
+## Sobre os End points
+- Criei as rotas dentro do arquivo *App\Config\Routes.php*
+- **GET:** Usei para pegar e listar os dados da tabela clientes
+- **POST:** Usei essa rota para Criar um novo cliente, geralmente essa rota é usada para inserir dados que vem de um formulário
+- **PUT:** Usei para atualizar um cliente que já existe no banco, a rota put é específica para esses casos
+- **DELETE:** Como o próprio nome já diz, apaga os dados de um cliente
